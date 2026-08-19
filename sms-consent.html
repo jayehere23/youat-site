@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YouAt — SMS Consent & Opt-In Flow</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+max-width:760px;margin:0 auto;padding:32px 20px 80px;
+color:#1c1917;line-height:1.65;background:#fefdfa}
+header{display:flex;align-items:center;gap:12px;
+padding-bottom:24px;border-bottom:1px solid #e7e5e4;margin-bottom:32px}
+.logo{width:44px;height:44px;border-radius:12px;background:#ea580c;
+display:flex;align-items:center;justify-content:center;
+color:#fff;font-weight:800;font-size:20px;letter-spacing:-0.5px}
+.brand{font-size:20px;font-weight:800;color:#1c1917;letter-spacing:-0.4px}
+.tag{font-size:13px;color:#78716c;margin-top:2px}
+h1{color:#1c1917;letter-spacing:-0.8px;font-size:32px;margin:0 0 4px}
+h2{margin-top:36px;font-size:18px;color:#1c1917}
+a{color:#ea580c;text-decoration:none;font-weight:600}
+a:hover{text-decoration:underline}
+small,.muted{color:#78716c}
+ .card{background:#fff;border:1px solid #e7e5e4;border-radius:14px;
+padding:20px 24px;margin:20px 0}
+.btn{display:inline-block;background:#ea580c;color:#fff!important;
+padding:12px 22px;border-radius:999px;font-weight:700;margin-top:12px}
+.btn:hover{background:#c2410c;text-decoration:none}
+footer{margin-top:64px;padding-top:24px;border-top:1px solid #e7e5e4;
+font-size:13px;color:#78716c;display:flex;flex-wrap:wrap;
+gap:18px;justify-content:space-between}
+footer .links a{color:#78716c;font-weight:500;margin-right:14px}
+img.shot{max-width:280px;width:100%;border:1px solid #e7e5e4;
+border-radius:14px;display:block;margin:20px 0}
+ul{padding-left:20px}li{margin:6px 0}
+blockquote{border-left:3px solid #ea580c;background:#fff7ed;
+margin:16px 0;padding:12px 18px;border-radius:6px;color:#7c2d12}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">Y</div>
+<div>
+<div class="brand">YouAt</div>
+  <div>
+<div class="brand">YouAt</div>
+<div class="tag">Family location sharing, done privately.</div>
+</div>
+</header>
+
+<h1>SMS Consent & Opt-In Flow</h1>
+<small>Last updated: June 2026 &middot; A2P 10DLC / Toll-Free compliance page</small>
+
+<div class="card">
+<p><strong>Program:</strong> YouAt Account Verification<br>
+<strong>Program operator:</strong> Jaye Hembree (sole proprietor, DBA "YouAt")<br>
+<strong>Use case:</strong> One-time password (2FA / Account Verification)<br>
+<strong>Estimated volume:</strong> ~500&ndash;1,000 SMS/month<br>
+<strong>Contains links:</strong> No<br>
+<strong>Third-party marketing lists:</strong> No</p>
+</div>
+
+<h2>What YouAt sends over SMS</h2>
+<p>YouAt sends exactly one type of SMS: a one-time 6-digit verification
+code, dispatched only when the end user actively taps "Continue" on the
+sign-in screen after entering their <em>own</em> phone number. No marketing,
+no promotions, no recurring alerts, no location updates, no third-party
+content.</p>
+<h2>Sample message (exact production text)</h2>
+<blockquote>
+Your YouAt verification code is 123456. Reply STOP to opt out, HELP for
+help. Msg &amp; data rates may apply.
+</blockquote>
+
+<h2>How users opt in</h2>
+<p>Opt-in occurs inside the YouAt mobile app (iOS and Android). No
+third-party lists or purchased data are ever used.</p>
+<ol>
+<li>User downloads YouAt from the Apple App Store or Google Play Store.</li>
+<li>User taps <strong>"Get Started"</strong> on the onboarding screen.</li>
+<li>User is taken to the <strong>"What's your number?"</strong> screen
+(screenshot below).</li>
+<li>The screen displays the consent line directly beneath the heading:
+<em>"We'll text you a code. Standard rates may apply."</em></li>
+<li>User enters their own mobile phone number and their name.</li>
+<li>User taps <strong>"Continue"</strong> to actively request an SMS
+verification code.</li>
+<li>Only after this explicit user action does YouAt send exactly one SMS
+to the number entered.</li>
+</ol>
+<p>This flow satisfies the CTIA Messaging Principles &amp; Best Practices
+standard for express written consent because the consent language is on
+the same screen as the input, the user must actively tap a button, and
+the message purpose is disclosed.</p>
+
+<h2>Screenshot of the in-app opt-in screen</h2>
+<img class="shot" src="https://i.imgur.com/rHXv5fk.jpeg"
+alt="YouAt phone-input consent screen">
+<p class="muted">The screenshot shows the actual sign-in screen users see,
+including the consent language.</p>
+
+<h2>How users opt out</h2>
+<ul>
+<li><strong>Reply STOP</strong> to any YouAt message. Twilio's Advanced
+Opt-Out blocks all future messages to that number automatically.</li>
+<li><strong>Delete their account</strong> in the app via Settings →
+Delete Account. The phone number is removed from our records within
+minutes.</li>
+<li><strong>Uninstall the app</strong>. Since all SMS is user-initiated,
+uninstalling stops all future messages.</li>
+</ul>
+
+<h2>How users request help</h2>
+<p>Reply <strong>HELP</strong> to receive a link to this page and a
+contact email. Or email
+<a href="mailto:support@youat.app">support@youat.app</a> directly.</p>
+
+<h2>Data handling</h2>
+<ul>
+<li>Phone numbers are stored only for the purpose of authenticating
+the user.</li>
+<li>We never sell, share, or rent phone numbers to any third party.</li>
+<li>Phone numbers are transmitted over TLS and stored on encrypted
+database volumes.</li>
+<li>Full privacy policy: <a href="./privacy.html">Privacy Policy</a></li>
+</ul>
+
+<h2>Contact</h2>
+<p>Email <a href="mailto:support@youat.app">support@youat.app</a>.
+Response within 5 business days.</p>
+
+<footer>
+<div class="links">
+<a href="./index.html">Home</a>
+<a href="./privacy.html">Privacy</a>
+<a href="./sms-consent.html">SMS Consent</a>
+<a href="./terms.html">Terms</a>
+</div>
+<div>YouAt is operated by Jaye Hembree (sole proprietor, DBA "YouAt").
+Contact: <a href="mailto:support@youat.app">support@youat.app</a></div>
+</footer>
+
+</body>
+</html>
